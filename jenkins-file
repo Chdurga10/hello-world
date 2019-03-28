@@ -1,0 +1,10 @@
+ node{
+   stage('SCM Checkout'){
+     def mvnHome =  tool name: 'Maven Home', type: 'maven'
+     git 'https://github.com/harshitha02/hello-world'
+   }
+   stage('Compile-Package'){
+    
+      def mvnHome =  tool name: 'Maven Home', type: 'maven'
+      sh "${mvnHome}/usr/share/mvn package"
+   }
